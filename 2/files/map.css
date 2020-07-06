@@ -1,0 +1,66 @@
+body
+{
+    background-image: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top
+{
+  background: linear-gradient(#8a8a5c,#1f1f14);
+  text-align: center;
+  padding: 20px;
+  border: solid black 3px;
+  margin:40px;
+}
+img
+{
+  width:400px;
+  height:300px;
+  margin-left:40px;
+}
+.header
+{
+  font-size: 190%;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+.text
+{
+  position: absolute;
+  top:260px;
+  right:50px;
+  background:#999999;
+  border:inset 5px black;
+  padding:8px;
+  font-size: 125%
+
+}
+.about
+{
+    background: linear-gradient(#8a8a5c,#1f1f14);
+  text-align: left;
+  padding: 10px 290px;
+  border: solid black 3px;
+  margin:40px;
+}
+.about1
+{
+    padding: 0px 130px;
+}
+.move{
+  width: 700px;
+  height: 30px;
+  position: relative;
+  animation: mymove 3s infinite;
+}
+.map1
+{
+  paddding-left: 15px;
+}
+@keyframes mymove {
+  0%{left: 70px; opacity: 0;}
+  25%{left:150px;opacity: 0; }
+  50%{left: 180px;opacity: 0;}
+  100%{left:230px;}
+}

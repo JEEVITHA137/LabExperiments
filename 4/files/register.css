@@ -1,0 +1,58 @@
+body
+{
+    background-image: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header
+{
+  font-size: 190%;
+  font-weight: bold;
+  text-decoration: none;
+   color:white;s
+}
+.top
+{
+  background: linear-gradient(#8a8a5c,#1f1f14);
+  text-align: center;
+  padding: 20px;
+  border: solid black 3px;
+  margin:40px;
+  color:white;
+}
+
+.forms
+{
+  background:#73725c;
+  color:white;
+  width:800px;
+  height:290px;
+  margin-left:270px;
+  padding-left:35px;
+  padding-top: 5px;
+  border: solid 3px black;
+  border-radius: 12px;
+  font-size:130%;
+  font-weight:bold;
+  font-family:"Times New Roman", "Times", "serif";
+}
+p
+{
+  margin-left:480px;
+  margin-top:-26px;
+  width:50px;
+  height:3px;
+  font-size: 80%;
+}
+#date
+{
+  height:20px;
+}
+#submit
+{
+  width:78px;
+  height:35px;
+  border:solid 3px black;
+  border-radius: 18px;
+  color: black;
+}

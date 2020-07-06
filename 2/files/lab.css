@@ -1,0 +1,119 @@
+body
+{
+    background-image: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.top
+{
+  background: linear-gradient(#8a8a5c,#1f1f14);
+  text-align: center;
+  padding: 20px;
+  border: solid black 3px;
+  margin:40px;
+}
+.header
+{
+  font-size: 190%;
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.menu
+{
+  width:300px;
+}
+.menu a
+{
+  display: block;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  font-size: 25px;
+  padding: 35px;
+  margin:0px 35px;
+}
+.menu a:hover
+{
+   background-color:#1f1f14 ;
+}
+.menu a.active
+{
+  background-color:#1f1f14;
+}
+.body
+{
+    height:370px;
+    background-image: url("./image.jpg");
+    border:solid black 3px;
+    margin :-390px 50px 0px 270px;
+    animation: im1 3s infinite;
+}
+.body:hover
+{
+  animation-play-state: paused;
+}
+.about
+{
+    background: linear-gradient(#8a8a5c,#1f1f14);
+  text-align: left;
+  padding: 10px 290px;
+  border: solid black 3px;
+  margin:40px;
+}
+.about1
+{
+    padding: 0px 130px;
+}
+.move{
+  width: 700px;
+  height: 30px;
+  position: relative;
+  animation: mymove 3s infinite;
+}
+.slide
+{
+  padding-left: 40px;
+  display:flex;
+}
+img
+{
+  width:600px;
+  height:400px;
+  padding:9px;
+  transition: transform 1s;
+}
+img:hover{
+    transform:scale(1.03);
+}
+.text
+{
+  position: absolute;
+  font-size: 190%;
+  top: 280px;
+  left: 200px;
+  background-color: black;
+  color: white;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+.text1
+{
+  position: absolute;
+  font-size: 190%;
+  top: 280px;
+  right: 160px;
+  background-color: black;
+  color: white;
+  padding-left: 25px;
+  padding-right: 20px;
+}
+
+@keyframes mymove {
+  0%{left: 70px; opacity: 0;}
+  25%{left:150px;opacity: 0; }
+  50%{left: 180px;opacity: 0;}
+  100%{left:230px;}
+}

@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>
+Form Validation
+</title>
+<link rel="stylesheet" type="text/css" href="./lab.css"/>
+</head>
+<body>
+<header class="top">
+<h1>REGISTRATION FORM</h1>
+</header>
+<div class="forms">
+<form action="ValServlet" method="POST">
+Name<input type="text" name="name">
+<br>
+Age<input type="number" name="age">
+<br>
+Email<input type="text" name="email">
+<br>
+Date-Of-Birth<input type="text" name="dob"><br>
+Country
+<select name="country" size="1">
+    <option value="default">---SELECT---</option>
+    <option value="india">INDIA</option>
+    <option value="pakistan">PAKISTAN</option>
+    <option value="bangladesh">BANGLADESH</option>
+</select>
+<br>
+<input  id="submit" type="submit" value="SUBMIT">
+</form>
+</div>
+</body>
+</html>

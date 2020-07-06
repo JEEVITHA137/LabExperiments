@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HOME</title>
+<link rel="stylesheet" type="text/css" href="./register.css"/>
+</head>
+<body>
+<div class="top">
+  <a class="header">Registraion Form</a>
+</div>
+<div class="forms" id="forms">
+  <pre>
+       Name[In Capital Letters]:<input type="text" name="name" id="name" maxlength="15" onfocus="this.value=''"><p id="name1"></p>
+       Age                     :<input type="text" name="age" maxlength="2" id="age" onfocus="this.value=''"><p id="age1"></p>
+       E-mail                  :<input type="email" name="mail" maxlength="30" id="mail" onfocus="this.value=''"><p id="mail1"></p>
+       Password[Min 6]         :<input type="password" name="pass" minlength="6" id="pass" onfocus="this.value=''"><p id="pass1"></p>
+       DOB[YYYY-MM-DD]         :<input type="text" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" name="date" id="date" onfocus="this.value=''"/><p id="date1"></p>
+       Country                 :<select id="option">
+        <option value="selectd">Select One</option>
+        <option  value="india">India</option>
+        <option value="china">China</option>
+        <option value="us">US</option>
+         <option value="africa">Asfrica</option>
+       </select><br><p id="option1"></p>
+                                       <input type="submit" id="submit" value="Submit" onclick="valid()">
+  </pre>
+</div>
+     <script>
+       function valid()
+       {
+         var n=document.getElementById("name").value;
+         var age=document.getElementById("age").value;
+         var mail=document.getElementById("mail").value;
+         var pass=document.getElementById("pass").value;
+         var option=document.getElementById("option").value;
+         var date=document.getElementById("date").value;
+         var i,nameb="false",count=0,mailb="false",passb="true",ageb="true",dateb="false",monthb="false",yearb="false",dob="false";
+         for(i=0;i<n.length;i++)
+         {
+           if(n.charCodeAt(i)>=65 && n.charCodeAt(i)<=90)
+           {
+               nameb="true";
+           }
+           else
+           {
+             nameb="false";
+           }
+           if(n.charCodeAt(i)==32)
+           {
+             count++;
+           }
+         }
+         if(count>1)
+         {
+           document.getElementById("name1").innerHTML="Only one space\nto be allowed";
+           document.getElementById("name1").style.color="red";
+         }
+         if(nameb=="false")
+         {
+             document.getElementById("name1").innerHTML="Enter In Capital";
+             document.getElementById("name1").style.color="red";
+         }
+         if(!(age>=18))
+         {
+           document.getElementById("age1").innerHTML="Above or equal to 18";
+           document.getElementById("age1").style.color="red";
+           ageb="false";
+         }
+         for(i=0;i<mail.length;i++)
+         {
+           if(mail.charCodeAt(i+1)>=65 && mail.charCodeAt(i+1)<=90)
+           {
+               mailb="false";
+               break;
+           }
+           if(mail.charCodeAt(i)== 64 && mail.charCodeAt(mail.length-4)==46)
+           {
+             if((mail.charCodeAt(i+1)>=97 && mail.charCodeAt(i+1)<=122) && !(mail.charCodeAt(i-1)>= 64 && mail.charCodeAt(i-1)<=90))
+             {
+               mailb="true";
+             }
+             else {
+               mailb="false";
+             }
+           }
+         }
+         if(mailb=="false")
+         {
+             document.getElementById("mail1").innerHTML="Incorrect mail syntax";
+             document.getElementById("mail1").style.color="red";
+         }
+         count=0;
+         for(i=0;i<pass.length;i++)
+         {
+           if(pass.charCodeAt(i)>=32 && pass.charCodeAt(i)<=47 || pass.charCodeAt(i)>=58 && pass.charCodeAt(i)<=64 || pass.charCodeAt(i)>=91 && pass.charCodeAt(i)<=96 || pass.charCodeAt(i)>=123 && pass.charCodeAt(i)<=126 )
+           {
+              count++;
+           }
+         }
+         if(pass.length<6)
+         {
+              document.getElementById("pass1").innerHTML="Minimum 6 character";
+              document.getElementById("pass1").style.color="red";
+              passb="false";
+         }
+         if(count==0)
+         {
+            document.getElementById("pass1").innerHTML="Must include one\nspecial Character ";
+            document.getElementById("pass1").style.color="red";
+            passb="false";
+         }
+         var year=date.split("-",1);
+         var check=2020-year;
+         if(age==check)
+         {
+            yearb="true";
+         }
+         else {
+           document.getElementById("date1").innerHTML="Age Doesn't Match";
+           document.getElementById("date1").style.color="red";
+         }
+         var month=date.slice(5);
+         month=month.split("-",1);
+         if(month>0 && month<=12)
+         {
+           monthb="true";
+         }
+         else {
+           document.getElementById("date1").innerHTML="Month B/W 1 to 12";
+           document.getElementById("date1").style.color="red";
+         }
+         var date1=date.slice(8);
+         date1=date1.split("-",1);
+         if(date1>0 && date1<=31)
+         {
+           dateb="true";
+         }
+         else {
+           document.getElementById("date1").innerHTML="Date B/W 1 to 31";
+           document.getElementById("date1").style.color="red";
+         }
+         if(dateb=="true" && monthb=="true" && yearb=="true")
+         {
+            dob="true";
+         }
+         if(nameb=="true" && mailb=="true" && ageb=="true" && passb=="true" && dob=="true")
+         {
+                 alert("Login Sucessfully");
+                 alert("Your Details:\nName:"+n+"\nMail:"+mail+"\nAge:"+age+"\nD-O-B:"+date+"\nCountry:"+option+".");
+         }
+        document.getElementsById("forms").reset();
+       }
+     </script>
+
+  </body>
+</html>
