@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AJAX Validation</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script src="scripts.js"></script>
+</head>
+<body>
+<div id="mainform">
+	<div class="innerdiv">
+	<h2>AJAX Validation</h2>
+	<form action='#' id="myForm" method='post' name="myForm">
+		Name<input id='username1' name='username' onblur="validate('username', this.value)" type='text'>
+		<div id='username'></div>
+		Password<input id='password1' name='password' onblur="validate('password', this.value)" type='password'>
+		<div id='password'></div>
+		<br><button>Go</button>
+	</form>
+	</div>
+</div>
+</body>
+</html>
+
